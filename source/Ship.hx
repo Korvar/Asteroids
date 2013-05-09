@@ -381,11 +381,15 @@ class Ship extends FlxPhysSprite
 		{
 			thrust -= Registry.thrustDelta;
 		}
-		
-		if (FlxG.keys.pressed("DOWN") || FlxG.keys.pressed("S") || Registry.buttonDown.status == FlxButton.PRESSED)
+		else
 		{
-			thrust += Registry.thrustDelta;
+			thrust = 0;
 		}
+		
+		//if (FlxG.keys.pressed("DOWN") || FlxG.keys.pressed("S") || Registry.buttonDown.status == FlxButton.PRESSED)
+		//{
+			//thrust += Registry.thrustDelta;
+		//}
 		
 		if (FlxG.keys.pressed("LEFT") || FlxG.keys.pressed("A") || Registry.buttonLeft.status == FlxButton.PRESSED)
 		{

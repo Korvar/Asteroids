@@ -33,7 +33,7 @@ class Registry
 	public static var thrust:Float = 0.0;
 	public static var thrustMax:Float = 300;
 	
-	public static var maneuverJetThrust:Float = 50;
+	public static var maneuverJetThrust:Float = 20;
 	public static var thrustDelta:Float = 20;
 	
 	// public static var landscape:NapeLandscape;
