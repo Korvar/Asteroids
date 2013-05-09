@@ -31,7 +31,7 @@ import org.flixel.nape.FlxPhysState;
  * ...
  * @author Mike Cugley
  */
-class NapeLander extends FlxPhysSprite
+class Ship extends FlxPhysSprite
 {
 	
 	var multiplier:Float = 1;
@@ -82,17 +82,17 @@ class NapeLander extends FlxPhysSprite
 		var listener:Listener = new ConstraintListener(CbEvent.BREAK, STRUTWELD, breakListener);
 		listener.space = body.space;
 		
-		var proximityListener = new InteractionListener(CbEvent.BEGIN, InteractionType.SENSOR,
-			Registry.PROXIMITYDETECTOR,
-			Registry.LANDSCAPE,
-			proximityEnterCallback);
-		proximityListener.space = body.space;
+		//var proximityListener = new InteractionListener(CbEvent.BEGIN, InteractionType.SENSOR,
+		//	Registry.PROXIMITYDETECTOR,
+		//	Registry.LANDSCAPE,
+		//	proximityEnterCallback);
+		//proximityListener.space = body.space;
 		
-		var proximityListener2 = new InteractionListener(CbEvent.END, InteractionType.SENSOR,
-			Registry.PROXIMITYDETECTOR,
-			Registry.LANDSCAPE,
-			proximityExitCallback);
-		proximityListener2.space = body.space;		
+		//var proximityListener2 = new InteractionListener(CbEvent.END, InteractionType.SENSOR,
+		//	Registry.PROXIMITYDETECTOR,
+		//	Registry.LANDSCAPE,
+		//	proximityExitCallback);
+		//proximityListener2.space = body.space;		
 		
 		// loadGraphic("assets/data/Lander.png", false); 
 		
@@ -113,7 +113,7 @@ class NapeLander extends FlxPhysSprite
 				var particle:SparkParticle = new SparkParticle();
 				particle.makeGraphic(2, 2, 0xffffffff);
 				particle.exists = false;
-				particle.cameras = [Registry.zoomCamera];
+				// particle.cameras = [Registry.zoomCamera];
 				emitter.add(particle);
 			}
 			FlxG.state.add(emitter);
@@ -134,10 +134,10 @@ class NapeLander extends FlxPhysSprite
 		maxImpulseMagnitude = 0;
 		#end
 		
-		var proximityDetectorShape:Shape = new Circle(150 * multiplier);
-		body.shapes.add(proximityDetectorShape);
-		proximityDetectorShape.sensorEnabled = true;
-		proximityDetectorShape.cbTypes.add(Registry.PROXIMITYDETECTOR);
+		//var proximityDetectorShape:Shape = new Circle(150 * multiplier);
+		//body.shapes.add(proximityDetectorShape);
+		//proximityDetectorShape.sensorEnabled = true;
+		//proximityDetectorShape.cbTypes.add(Registry.PROXIMITYDETECTOR);
 		
 	}
 	
@@ -505,7 +505,7 @@ class NapeLander extends FlxPhysSprite
 		//strut.drawLine(strutWidth - 1, 0, 0, 0, 0xffff0000);
 		#end
 		FlxG.state.add(strut);
-		strut.cameras = [Registry.zoomCamera];
+		// strut.cameras = [Registry.zoomCamera];
 		
 		return (strut);
 	}
@@ -582,7 +582,7 @@ class NapeLander extends FlxPhysSprite
 				spark1.makeGraphic(2, 2, 0xffffffff);
 				spark2.makeGraphic(2, 2, 0xffffffff);
 				spark1.exists = spark2.exists = false;
-				spark1.cameras = spark2.cameras = [Registry.zoomCamera];
+				// spark1.cameras = spark2.cameras = [Registry.zoomCamera];
 				sparks1.add(spark1);
 				sparks2.add(spark2);
 			}
@@ -592,12 +592,12 @@ class NapeLander extends FlxPhysSprite
 	
 	function proximityEnterCallback(cb:InteractionCallback)
 	{
-		Registry.zoomCamera.targetZoom = 3.0;
+		// Registry.zoomCamera.targetZoom = 3.0;
 	}
 	
 	function proximityExitCallback(cb:InteractionCallback)
 	{
-		Registry.zoomCamera.targetZoom = 0.6;
+		// Registry.zoomCamera.targetZoom = 0.6;
 	}
 	
 	

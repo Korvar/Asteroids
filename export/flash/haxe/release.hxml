@@ -1,0 +1,14 @@
+-main ApplicationMain 
+-lib nme
+-lib flixel
+-lib nape
+-cp source
+-cp C:\Motion-Twin\haxe\lib\nme/3,5,5/
+-cp C:\Motion-Twin\haxe\lib\flixel/1,09/
+-D nme_install_tool
+-D fdb
+-D web
+-swf-version 10.1
+-swf9 export/flash/bin/Asteroids.swf
+-swf-header 1280:800:30:FFFFFF
+-cp export/flash/haxe
