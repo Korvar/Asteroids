@@ -58,6 +58,9 @@ class PlayState extends FlxPhysState
 		FlxG.camera.follow(ship);
 		FlxG.camera.setBounds(Registry.worldMinX, Registry.worldMinY, Registry.worldMaxX, Registry.worldMaxY, true);
 		
+		var asteroid:Asteroid = new Asteroid(ship.x + 300, ship.y);
+		add(asteroid);
+		
 		setupHUD();
 				
 		#if debug
