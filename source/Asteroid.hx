@@ -4,6 +4,7 @@ import nape.phys.Body;
 import nape.phys.Material;
 import nape.shape.Polygon;
 import org.flixel.FlxG;
+import org.flixel.FlxGroup;
 import org.flixel.FlxSprite;
 import org.flixel.nape.FlxPhysSprite;
 
@@ -11,12 +12,12 @@ import org.flixel.nape.FlxPhysSprite;
  * ...
  * @author Mike Cugley
  */
-class Asteroid extends FlxPhysSprite
+class Asteroid extends FlxGroup
 {
 
-	public function new(X:Float=0, Y:Float=0, SimpleGraphic:Dynamic=null, CreateBody:Bool=true) 
+	public function new(X:Float, Y:Float) 
 	{
-		super(X, Y, SimpleGraphic, CreateBody);
+		super();
 		
 		// First pass at making my multi-object asteroid.
 		
@@ -39,8 +40,18 @@ class Asteroid extends FlxPhysSprite
 				newShape.material = Material.sand();
 				newSegment.body.shapes.clear();
 				newSegment.body.shapes.add(newShape);
-				FlxG.state.add(newSegment);
+				add(newSegment);
 				cells[i].push(newSegment);
+			}
+		}
+		
+		for (i in 0...(numCells -1))		{
+			for (j in 0...(numCells -1))
+			{
+				var thisCell = cells[i][j];
+				var rightCell = cells[i + 1][j];
+				var downCell = cells[i][j + 1];
+				var rightDownCell = cells[i + 1][j + 1];
 			}
 		}
 		
