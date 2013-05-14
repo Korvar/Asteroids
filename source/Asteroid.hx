@@ -73,9 +73,11 @@ class Asteroid extends FlxGroup
 					rightDownCell.body.worldPointToLocal(rightDownWeldPoint));
 				rightDownWeld.space = thisCell.body.space;
 				
-				rightWeld.ignore = true;
-				downWeld.ignore = true;
-				rightDownWeld.ignore = true;
+				//rightWeld.ignore = true;
+				//downWeld.ignore = true;
+				//rightDownWeld.ignore = true;
+				
+				rightWeld.maxError = downWeld.maxError = rightDownWeld.maxError = 5;				
 				
 				
 				rightWeldPoint.dispose();
