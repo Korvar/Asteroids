@@ -1,5 +1,7 @@
 package ;
 
+import org.flixel.FlxG;
+import org.flixel.FlxObject;
 import org.flixel.FlxParticle;
 import org.flixel.nape.FlxPhysSprite;
 
@@ -7,7 +9,7 @@ import org.flixel.nape.FlxPhysSprite;
  * ...
  * @author Mike Cugley
  */
-class FlxPhysParticle extends FlxPhysSprite, implements FlxParticle
+class FlxPhysParticle extends FlxPhysSprite
 {
 
 	/**
@@ -28,23 +30,11 @@ class FlxPhysParticle extends FlxPhysSprite, implements FlxParticle
 	 * Instantiate a new particle.  Like <code>FlxSprite</code>, all meaningful creation
 	 * happens during <code>loadGraphic()</code> or <code>makeGraphic()</code> or whatever.
 	 */
-	public function new()
-	{
-		super();
-		lifespan = 0;
-		friction = 500;
-	}
-	
-	/**
-	 * The particle's main update logic.  Basically it checks to see if it should
-	 * be dead yet, and then has some special bounce behavior if there is some gravity on it.
-	 */
-	
-	
 	public function new(X:Float=0, Y:Float=0, SimpleGraphic:Dynamic=null, CreateBody:Bool=true) 
 	{
 		super(X, Y, SimpleGraphic, CreateBody);
-		
+		lifespan = 0;
+		friction = 500;
 	}
 	
 	public function onEmit():Void { }

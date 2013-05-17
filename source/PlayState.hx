@@ -1,6 +1,7 @@
 package ;
 import org.flixel.FlxButton;
 import org.flixel.FlxCamera;
+import org.flixel.FlxEmitter;
 import org.flixel.FlxG;
 import org.flixel.FlxGroup;
 import org.flixel.FlxPoint;
@@ -60,6 +61,12 @@ class PlayState extends FlxPhysState
 		
 		var asteroid:Asteroid = new Asteroid(ship.x + 300, ship.y);
 		add(asteroid);
+		
+		var testParticle:FlxPhysParticle = new FlxPhysParticle(ship.x, ship.y +200);
+		add(testParticle);
+		
+		var testEmitter:FlxEmitter = new FlxEmitter(ship.x -200, ship.y + 200);
+		add(testEmitter);
 		
 		setupHUD();
 				

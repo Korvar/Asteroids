@@ -7,6 +7,9 @@
  	
 	<set name="BUILD_DIR" value="export" />
 	
+	<set name="SWF_VERSION" value="10.1" />
+
+	
 	<!--<setenv name="no_console" value="1" />-->
 	
 	<classpath name="source" />
